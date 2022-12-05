@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'knox',
     'users',
+    'coreapi',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +128,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
